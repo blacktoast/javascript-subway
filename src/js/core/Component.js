@@ -1,22 +1,26 @@
-export default class Components extends HTMLElement {
+export default class Component extends HTMLElement {
+  $target;
+  $state;
   constructor() {
     super();
+    this.setup();
+    this.setEvent();
     this.render();
   }
-
+  setup() {}
+  template() {
+    return "";
+  }
   render() {
-    this.innerHTML = this.getTemplate();
+    this.innerHTML = this.template();
   }
-
-  getTemplate() {}
-
-  connectedCallback() {}
-
-  disconnectedCallback() {}
-
-  static get observedAttributes() {
-    return [];
+  renderAdd(position, html) {
+    this.insertAdjacentHTML(position, html);
   }
-
-  attributeChangedCallback(name, oldValue, newValue) {}
+  setEvent() {}
+  setState(newState) {
+    console.log(newState);
+    this.$state = { ...this.$state, ...newState };
+    this.render();
+  }
 }
