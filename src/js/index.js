@@ -20,7 +20,9 @@ document.querySelector(".menuNav").addEventListener("click", function (e) {
   console.log(e.target.dataset.menu);
   history.pushState({ data: menu }, "title을 pushState로", `/pages/${menu}`);
   console.log(window.location.pathname);
-  document.querySelector("main").innerHTML = `<main-login></main-login>`;
+  document.querySelector(
+    "main"
+  ).innerHTML = `<main-login class="d-none"></main-login>`;
 });
 window.addEventListener("popstate", function () {
   console.log(history.state);
