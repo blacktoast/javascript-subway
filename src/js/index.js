@@ -1,3 +1,6 @@
+import Login from "./components/pages/login.js";
+
+Login;
 const headerTemplate = `
 <a href="/" class="text-black">
   <h1 class="text-center font-bold">🚇 지하철 노선도</h1>
@@ -12,18 +15,13 @@ const headerTemplate = `
 </nav>`;
 
 document.querySelector("header").innerHTML = headerTemplate;
-let a = document
-  .querySelector(".menuNav")
-  .addEventListener("click", function (e) {
-    let menu = e.target.dataset.menu;
-    console.log(e.target.dataset.menu);
-    history.pushState(
-      { data: menu },
-      "title을 pushState로",
-      "/pages/lines.html"
-    );
-    console.log("test");
-  });
+document.querySelector(".menuNav").addEventListener("click", function (e) {
+  let menu = e.target.dataset.menu;
+  console.log(e.target.dataset.menu);
+  history.pushState({ data: menu }, "title을 pushState로", `/pages/${menu}`);
+  console.log(window.location.pathname);
+  document.querySelector("main").innerHTML = `<main-login></main-login>`;
+});
 window.addEventListener("popstate", function () {
   console.log(history.state);
 });

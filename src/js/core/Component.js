@@ -1,6 +1,7 @@
 export default class Component extends HTMLElement {
   $target;
   $state;
+  $props;
   constructor() {
     super();
     this.setup();
@@ -14,9 +15,10 @@ export default class Component extends HTMLElement {
   render() {
     this.innerHTML = this.template();
   }
-  renderAdd(position, html) {
-    this.insertAdjacentHTML(position, html);
+  setProps(newProps) {
+    this.$props = newProps;
   }
+
   setEvent() {}
   setState(newState) {
     console.log(newState);
