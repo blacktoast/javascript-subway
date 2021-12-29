@@ -16,7 +16,7 @@ export default class Component extends HTMLElement {
     this.innerHTML = this.template(this.$props);
   }
   setProps(newProps) {
-    this.$props = [...this.$props, ...newProps];
+    this.$props = newProps;
     this.render();
   }
   addEvent(eventType, selector, callback) {

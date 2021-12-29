@@ -1,5 +1,6 @@
 import Component from "../core/Component.js";
 import { localStore } from "../utils/localStore.js";
+import { getRouteName, routingTable } from "../utils/route.js";
 
 export class Nav extends Component {
   constructor() {
@@ -14,7 +15,13 @@ export class Nav extends Component {
   }
   setEvent() {
     this.addEvent("click", ".menu", ({ target }) => {
-      console.log(target);
+      let menu = target.dataset.menu;
+      console.log(target.dataset.menu);
+      let routeName = getRouteName(menu);
+      let props = {
+        route: routeName,
+      };
+      document.querySelector("main-app").setProps(props);
     });
   }
 }

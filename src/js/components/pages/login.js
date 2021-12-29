@@ -1,4 +1,5 @@
 import Component from "../../core/Component.js";
+import { getRouteName } from "../../utils/route.js";
 
 export default class Login extends Component {
   constructor() {
@@ -48,11 +49,23 @@ export default class Login extends Component {
             </div>
             <p class="text-gray-700 pl-2">
               아직 회원이 아니신가요?
-              <a href="/pages/signup.html">회원가입</a>
+              <a class="singUp" href="/pages/signup.html">회원가입</a>
             </p>
           </form>
         </div>
       `;
+  }
+  setEvent() {
+    this.addEvent("click", ".singUp", (e) => {
+      e.preventDefault();
+
+      let routeName = getRouteName("signup");
+      let props = {
+        route: routeName,
+      };
+      console.log(routeName);
+      document.querySelector("main-app").setProps(props);
+    });
   }
 }
 

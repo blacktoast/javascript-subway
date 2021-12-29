@@ -1,6 +1,6 @@
 import Component from "../../core/Component.js";
 
-export default class SingUp extends Component {
+export default class SignUp extends Component {
   constructor() {
     super();
   }
@@ -73,4 +73,4 @@ export default class SingUp extends Component {
   }
 }
 
-customElements.define("main-singup", SingUp);
+customElements.define("main-signup", SignUp);
