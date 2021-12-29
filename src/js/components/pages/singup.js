@@ -1,3 +1,5 @@
+import Component from "../../core/Component.js";
+
 export default class SingUp extends Component {
   constructor() {
     super();

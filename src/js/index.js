@@ -1,4 +1,7 @@
 import Login from "./components/pages/login.js";
+import SingUp from "./components/pages/singup.js";
+import test from "./utils/test.js";
+import App from "./components/app.js";
 
 Login;
 const headerTemplate = `
@@ -14,6 +17,7 @@ const headerTemplate = `
     <button class="btn bg-white shadow mx-1 menu " data-menu="login" >👤 로그인</button>
 </nav>`;
 
+document.querySelector("#app").innerHTML = "<main-app></main-app>";
 document.querySelector("header").innerHTML = headerTemplate;
 document.querySelector(".menuNav").addEventListener("click", function (e) {
   let menu = e.target.dataset.menu;
@@ -27,3 +31,19 @@ document.querySelector(".menuNav").addEventListener("click", function (e) {
 window.addEventListener("popstate", function () {
   console.log(history.state);
 });
+
+window.addEventListener("locationchange", () => {
+  console.log(window.location.pathname);
+});
+
+test();
+const route = {
+  "/pages/login": "main-login",
+  "/pages/lines": "main-lines",
+  "/pages/sections ": "main-sections",
+  "/pages/stations": "main-stations",
+  "/pages/map": "main-map",
+  "/pages/singup": "main-singup",
+};
+
+function routePage(pathname) {}
