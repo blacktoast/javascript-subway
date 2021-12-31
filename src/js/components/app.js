@@ -1,5 +1,6 @@
 import Component from "../core/Component.js";
 import { Nav } from "./header.js";
+import mainRoot from "./pages/mainRoot.js";
 
 export default class App extends Component {
   constructor() {
@@ -30,7 +31,7 @@ export default class App extends Component {
         <div class="w-100">
           <main-nav class="my-4">${"at"}</main-nav>
           <main class="mt-10 d-flex justify-center">
-          ${tag ? `<${tag}></${tag}>` : tmp}
+          ${tag ? `<${tag}></${tag}>` : `<main-root></main-root>`}
             <main-login class="d-none"></main-login>
             <main-lines class="d-none"></main-lines>
             <main-sections class="d-none"></main-sections>

@@ -6,7 +6,7 @@ export default class SignUp extends Component {
   }
   setEvent() {
     this.addEvent("click", ".input-submit ", (e) => {
-      console.log(e);
+      console.log(e.target.closest("form"));
     });
   }
   template() {
@@ -15,7 +15,7 @@ export default class SignUp extends Component {
               <div class="heading">
                 <h2 class="text">📝 회원가입</h2>
               </div>
-              <form name="login" class="form">
+              <form name="signUp" class="form">
                 <div class="input-control">
                   <label for="email" class="input-label" hidden>이메일</label>
                   <input

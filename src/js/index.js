@@ -18,15 +18,9 @@ const headerTemplate = `
 </nav>`;
 
 document.querySelector("#app").innerHTML = "<main-app></main-app>";
-document.querySelector("header").innerHTML = headerTemplate;
-document.querySelector(".menuNav").addEventListener("click", function (e) {
-  let menu = e.target.dataset.menu;
-  console.log(e.target.dataset.menu);
-  history.pushState({ data: menu }, "title을 pushState로", `/pages/${menu}`);
-  console.log(window.location.pathname);
-  document.querySelector(
-    "main"
-  ).innerHTML = `<main-login class="d-none"></main-login>`;
+
+window.addEventListener("load", (e) => {
+  history.pushState({ data: "root" }, "title을 pushState로", `/pages/root`);
 });
 window.addEventListener("popstate", function () {
   console.log(history.state);
