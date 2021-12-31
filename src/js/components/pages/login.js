@@ -9,7 +9,6 @@ export default class Login extends Component {
   setEvent() {
     this.addEvent("click", ".singUp", (e) => {
       e.preventDefault();
-      ㅊㅊㅊ;
       let routeName = getRouteName("signup");
       let props = {
         route: routeName,

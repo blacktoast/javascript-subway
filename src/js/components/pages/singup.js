@@ -4,6 +4,11 @@ export default class SignUp extends Component {
   constructor() {
     super();
   }
+  setEvent() {
+    this.addEvent("click", ".input-submit ", (e) => {
+      console.log(e);
+    });
+  }
   template() {
     return `
            <div class="wrapper p-10 bg-white">

@@ -14,9 +14,9 @@ export default class App extends Component {
       route: "",
     };
   }
-  
+
   template() {
-    let tag = this.$props.route || ""
+    let tag = this.$props.route || "";
     let tmp = `<div class="d-flex flex-col">
               <div class="d-flex justify-center">
                 <img src="src/images/subway_emoji.png" width="200" />
@@ -30,8 +30,7 @@ export default class App extends Component {
         <div class="w-100">
           <main-nav class="my-4">${"at"}</main-nav>
           <main class="mt-10 d-flex justify-center">
-${tag ? `<${tag}></${tag}>` : tmp}
-         
+          ${tag ? `<${tag}></${tag}>` : tmp}
             <main-login class="d-none"></main-login>
             <main-lines class="d-none"></main-lines>
             <main-sections class="d-none"></main-sections>

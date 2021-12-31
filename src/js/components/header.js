@@ -8,10 +8,11 @@ export class Nav extends Component {
   }
   getRoutingDate() {}
   setup() {
-    this.$props = getRoutingDate();
+    this.$state = getRoutingDate();
   }
   template() {
-    return hearderTemplate(this.$props);
+    let state = this.$state;
+    return hearderTemplate(state);
   }
   setEvent() {
     this.addEvent("click", ".menu", ({ target }) => {
@@ -32,23 +33,27 @@ function getRoutingDate() {
     tmp = [
       {
         Route: "stations",
-        name: "역관리",
+        name: "🚉 역 관리",
       },
       {
-        Route: "stations",
-        name: "역관리",
+        Route: "line",
+        name: "🛤️ 노선 관리",
       },
       {
-        Route: "stations",
-        name: "역관리",
+        Route: "section",
+        name: "🔁 구간 관리",
       },
       {
-        Route: "stations",
-        name: "역관리",
+        Route: "map",
+        name: "🗺️ 전체 보기",
       },
       {
-        Route: "stations",
-        name: "역관리",
+        Route: "search",
+        name: "🔎 길 찾기",
+      },
+      {
+        Route: "logout",
+        name: "로그아웃",
       },
     ];
   }
