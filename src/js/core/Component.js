@@ -34,7 +34,9 @@ export default class Component extends HTMLElement {
       callback(event);
     });
   }
-  setEvent() {}
+  setEvent() {
+    let test;
+  }
 
   setState(newState) {
     console.log(newState);
