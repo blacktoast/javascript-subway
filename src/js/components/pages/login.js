@@ -13,6 +13,7 @@ export default class Login extends Component {
       let props = {
         route: routeName,
       };
+
       console.log(routeName);
       document.querySelector("main-app").setProps(props);
     });
