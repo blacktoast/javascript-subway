@@ -6,6 +6,18 @@ export default class Login extends Component {
     super();
     console.log("creat");
   }
+  setEvent() {
+    this.addEvent("click", ".singUp", (e) => {
+      e.preventDefault();
+      ㅊㅊㅊ;
+      let routeName = getRouteName("signup");
+      let props = {
+        route: routeName,
+      };
+      console.log(routeName);
+      document.querySelector("main-app").setProps(props);
+    });
+  }
   template() {
     return `
         <div class="wrapper p-10 bg-white">
@@ -54,18 +66,6 @@ export default class Login extends Component {
           </form>
         </div>
       `;
-  }
-  setEvent() {
-    this.addEvent("click", ".singUp", (e) => {
-      e.preventDefault();
-
-      let routeName = getRouteName("signup");
-      let props = {
-        route: routeName,
-      };
-      console.log(routeName);
-      document.querySelector("main-app").setProps(props);
-    });
   }
 }
 
