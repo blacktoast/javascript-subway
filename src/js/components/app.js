@@ -11,13 +11,13 @@ export default class App extends Component {
     console.log(this);
   }
   setup() {
-    this.$props = {
+    this.$value = {
       route: "",
     };
   }
 
   template() {
-    let tag = this.$props.route || "";
+    let tag = this.$value.route || "";
     let tmp = `<div class="d-flex flex-col">
               <div class="d-flex justify-center">
                 <img src="src/images/subway_emoji.png" width="200" />

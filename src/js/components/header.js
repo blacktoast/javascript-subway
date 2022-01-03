@@ -19,10 +19,10 @@ export class Nav extends Component {
       let menu = target.dataset.menu;
       console.log(target.dataset.menu);
       let routeName = getRouteName(menu);
-      let props = {
+      let value = {
         route: routeName,
       };
-      document.querySelector("main-app").setProps(props);
+      document.querySelector("main-app").setValue(value);
     });
   }
 }

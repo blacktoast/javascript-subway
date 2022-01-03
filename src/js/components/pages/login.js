@@ -10,12 +10,12 @@ export default class Login extends Component {
     this.addEvent("click", ".singUp", (e) => {
       e.preventDefault();
       let routeName = getRouteName("signup");
-      let props = {
+      let value = {
         route: routeName,
       };
 
       console.log(routeName);
-      document.querySelector("main-app").setProps(props);
+      document.querySelector("main-app").setValue(value);
     });
   }
   template() {

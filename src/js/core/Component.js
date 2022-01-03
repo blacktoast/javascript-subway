@@ -2,6 +2,7 @@ export default class Component extends HTMLElement {
   $target;
   $state;
   $props;
+  $value;
   constructor() {
     super();
     this.setup();
@@ -17,9 +18,18 @@ export default class Component extends HTMLElement {
   render() {
     this.innerHTML = this.template(this.$props);
   }
-
-  setProps(newProps) {
-    this.$props = newProps;
+  setProps() {
+    console.log(
+      [...this.attributes].map((e) => {
+        let newProps = { [e.name]: e.value };
+        this.$props = { ...this.$props, ...newProps };
+      })
+    );
+    console.log(this.$props);
+    //  this.render();
+  }
+  setValue(value) {
+    this.$value = value;
     this.render();
   }
 
@@ -34,9 +44,7 @@ export default class Component extends HTMLElement {
       callback(event);
     });
   }
-  setEvent() {
-    let test;
-  }
+  setEvent() {}
 
   setState(newState) {
     console.log(newState);
