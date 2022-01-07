@@ -5,8 +5,9 @@ export default class SignUp extends Component {
     super();
   }
   setEvent() {
-    this.addEvent("click", ".input-submit ", (e) => {
-      console.log(e.target.closest("form"));
+    this.addEvent("submit", ".form", (e) => {
+      e.preventDefault();
+      console.log(e.target);
     });
   }
   template() {
@@ -64,7 +65,7 @@ export default class SignUp extends Component {
                 </div>
                 <div class="input-control">
                   <button
-                    type="button"
+                    type="submit"
                     name="submit"
                     class="input-submit w-100 bg-cyan-300"
                   >
